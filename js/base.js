@@ -5,8 +5,8 @@
 		"use strict";
 
 		var defaults  = {
-			first: false,, //设置false则不显示，默认为false
-			last: false,, //设置false则不显示，默认为false  
+			first: false, //设置false则不显示，默认为false
+			last: false, //设置false则不显示，默认为false  
 			prev: "上一页", //设置为false,则不显示，默认为“上一页”
 			next: "下一页", //设置为false,则不显示，默认为“下一页”
 			numOrignClass: ".num", //分页样式
