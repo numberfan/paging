@@ -13,7 +13,7 @@
 			padding: 10px;
 			border: 1px solid #ccc;
 		}
-		.num-active {
+		.num.active {
 			color: #f00;
 			border-color: transparent;
 			color: #fff;
@@ -29,11 +29,11 @@
 <body>
 
 	<div class="pager" id="pagination"></div>
-	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/paging_1.1.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-			$('.pager').paging(1, 6, {
+			$('.pager').paging(1, 10, {
 				first: "首",
 				last: "末",
 				prev: "上",

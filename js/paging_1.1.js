@@ -20,24 +20,23 @@
 
 		var params = $.extend({}, defaults, opt);
 
-
 		var innerFun = {}; 
 		var _this = this;
 		var obj = $(_this);
 
 		//判断是否为数组，且不为“false”
-		innerFun.isArray = function(da) {
+		innerFun.isArray = function(val) {
 
 			var _regexp = new RegExp("false");
-			var _isFalse = _regexp.test(da);
+			var _isFalse = _regexp.test(val);
 
-			if (typeof da === "boolean") {
+			if (typeof val === "boolean") {
 
 				return false;
 
 			//参数值为string，且字符串不能为"false"
-			} else if (typeof da === "string" && !_isFalse) {
-				return da;
+			} else if (typeof val === "string" && !_isFalse) {
+				return val;
 			}
 			return false;
 		};
@@ -48,14 +47,18 @@
 			nowNum = parseInt(nowNum);
 			allNum = parseInt(allNum);
 
-			if (nowNum > allNum && nowNum >= 1 && allNum >= 1) { //若当前页数大于总页数，则替换两个数据
+			if (!nowNum || nowNum < 1) {
+				nowNum = 1;
+			}
+
+			if (!allNum || allNum < 1) {
+				allNum = nowNum;
+			}
+
+			if (nowNum > allNum && nowNum >= 1 && allNum >= 1) { 
 				var a = nowNum;
 				nowNum = allNum;
 				allNum = a;
-			} else if (nowNum <= 1) {
-				nowNum = 1;
-			} else if (allNum <= 1) {
-				allNum = 1;
 			}
 		};
 
@@ -98,6 +101,7 @@
 						.addClass(params.numOrignClass);
 
 					if(nowNum == i){
+						console.log(nowNum, i);
 						oA.addClass(params.numHoverClass);
 					}
 					obj.append(oA);
