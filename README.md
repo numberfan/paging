@@ -3,7 +3,7 @@
 ###1.引入文件
 ````
   <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-  <script type="text/javascript" src="js/base.js"></script>
+  <script type="text/javascript" src="js/paging_1.1.js"></script>
 ````
 ###2.使用
 ````
