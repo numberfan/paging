@@ -1,3 +1,8 @@
+/*
+*开发者：陈璠
+*开发时间：2016-11-10
+*/
+
 ;(function($) {
 
 	$.fn.paging = function(nowNum, allNum, opt) {
